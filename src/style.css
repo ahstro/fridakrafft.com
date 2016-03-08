@@ -19,7 +19,6 @@ body {
 
 main {
   text-align: center;
-    position: relative;
       cursor: pointer;
 }
 
@@ -29,15 +28,12 @@ h1, h2 {
 }
 
 h1 { font-size: 4rem }
+section { position: relative }
+h2 { font-size: 1.5rem }
+nav { opacity: 0 }
 
-h2 {
-  font-size: 1.5rem;
-   position: relative;
-}
-
-nav {
+h2, nav {
   position: absolute;
-   opacity: 0;
      width: 100%;
 }
 
@@ -70,33 +66,33 @@ hr {
 }
 
 .show-nav {
-  & > h2 { animation: .5s forwards; animation-name: fade-out, slide-in }
-  & > nav { animation: .5s forwards; animation-name: fade-in, slide-in-nav }
+  & h2 { animation: .5s forwards; animation-name: fade-out, slide-in }
+  & nav { animation: .5s forwards; animation-name: fade-in, slide-in-nav }
 }
 
 .hide-nav {
-  & > h2 { animation: .5s forwards; animation-name: fade-in, slide-out }
-  & > nav { animation: .5s forwards; animation-name: fade-out, slide-out-nav }
+  & h2 { animation: .5s forwards; animation-name: fade-in, slide-out }
+  & nav { animation: .5s forwards; animation-name: fade-out, slide-out-nav }
 }
 
 @keyframes slide-in {
-  from { bottom: 0 }
-    to { bottom: 1rem }
+  from { top: 0 }
+    to { top: 1rem }
 }
 
 @keyframes slide-out {
-  from { bottom: 1rem }
-    to { bottom: 0 }
+  from { top: 1rem }
+    to { top: 0 }
 }
 
 @keyframes slide-in-nav {
-  from { bottom: -1rem }
-    to { bottom: .5rem }
+  from { top: -1rem }
+    to { top: .2rem }
 }
 
 @keyframes slide-out-nav {
-  from { bottom: .5rem }
-    to { bottom: -1rem }
+  from { top: .2rem }
+    to { top: -1rem }
 }
 
 @keyframes fade-out {
