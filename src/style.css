@@ -1,0 +1,106 @@
+:root {
+  --mainColor: #666;
+   --iconSize: 1.8rem;
+    --bgColor: #fff;
+
+  font-family: 'GenomeThin', sans-serif;
+    font-size: 16px;
+}
+
+body {
+  background-color: var(--bgColor);
+   justify-content: center;
+    flex-direction: column;
+       align-items: center;
+           display: flex;
+            height: 100vh;
+             color: var(--mainColor);
+}
+
+main {
+  text-align: center;
+    position: relative;
+      cursor: pointer;
+}
+
+h1, h2 {
+  font-weight: normal; 
+       margin: 0;
+}
+
+h1 { font-size: 4rem }
+
+h2 {
+  font-size: 1.5rem;
+   position: relative;
+}
+
+nav {
+  position: absolute;
+   opacity: 0;
+     width: 100%;
+}
+
+ul {
+  justify-content: space-between;
+          display: flex;
+          padding: 0;
+           margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+            color: var(--mainColor);
+}
+
+hr {
+  border-bottom: none;
+   border-right: none;
+    border-left: none;
+     border-top: 1px solid var(--mainColor);
+          width: 85%;
+}
+
+.show-nav {
+  & > h2 { animation: .5s forwards; animation-name: fade-out, slide-in }
+  & > nav { animation: .5s forwards; animation-name: fade-in, slide-in-nav }
+}
+
+.hide-nav {
+  & > h2 { animation: .5s forwards; animation-name: fade-in, slide-out }
+  & > nav { animation: .5s forwards; animation-name: fade-out, slide-out-nav }
+}
+
+@keyframes slide-in {
+  from { bottom: 0 }
+    to { bottom: 1rem }
+}
+
+@keyframes slide-out {
+  from { bottom: 1rem }
+    to { bottom: 0 }
+}
+
+@keyframes slide-in-nav {
+  from { bottom: -1rem }
+    to { bottom: .5rem }
+}
+
+@keyframes slide-out-nav {
+  from { bottom: .5rem }
+    to { bottom: -1rem }
+}
+
+@keyframes fade-out {
+  from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+    to { opacity: 1 }
+}
