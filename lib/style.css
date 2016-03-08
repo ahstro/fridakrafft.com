@@ -1,0 +1,198 @@
+:root {
+
+  font-family: 'GenomeThin', sans-serif;
+    font-size: 16px;
+}
+
+body {
+  background-color: #fff;
+   -webkit-box-pack: center;
+   -webkit-justify-content: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+       -webkit-box-align: center;
+       -webkit-align-items: center;
+           -ms-flex-align: center;
+               align-items: center;
+           display: -webkit-box;
+           display: -webkit-flex;
+           display: -ms-flexbox;
+           display: flex;
+            height: 100vh;
+             color: #666;
+}
+
+main {
+  text-align: center;
+    position: relative;
+      cursor: pointer;
+}
+
+h1, h2 {
+  font-weight: normal; 
+       margin: 0;
+}
+
+h1 { font-size: 64px; font-size: 4rem }
+
+h2 {
+  font-size: 24px;
+  font-size: 1.5rem;
+   position: relative;
+}
+
+nav {
+  position: absolute;
+   opacity: 0;
+     width: 100%;
+}
+
+ul {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          padding: 0;
+           margin: 0 16px;
+           margin: 0 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+            color: #666;
+}
+
+a:hover,
+a:focus { color: rgb(163, 102, 102) }
+a:focus { outline: none; }
+
+hr {
+  border-bottom: none;
+   border-right: none;
+    border-left: none;
+     border-top: 1px solid #666;
+          width: 85%;
+}
+
+.show-nav {
+}
+
+.show-nav > h2 {
+
+  -webkit-animation: .5s forwards;
+
+          animation: .5s forwards;
+
+  -webkit-animation-name: fade-out, slide-in;
+
+          animation-name: fade-out, slide-in;
+}
+
+.show-nav > nav {
+
+  -webkit-animation: .5s forwards;
+
+          animation: .5s forwards;
+
+  -webkit-animation-name: fade-in, slide-in-nav;
+
+          animation-name: fade-in, slide-in-nav;
+}
+
+.hide-nav {
+}
+
+.hide-nav > h2 {
+
+  -webkit-animation: .5s forwards;
+
+          animation: .5s forwards;
+
+  -webkit-animation-name: fade-in, slide-out;
+
+          animation-name: fade-in, slide-out;
+}
+
+.hide-nav > nav {
+
+  -webkit-animation: .5s forwards;
+
+          animation: .5s forwards;
+
+  -webkit-animation-name: fade-out, slide-out-nav;
+
+          animation-name: fade-out, slide-out-nav;
+}
+
+@-webkit-keyframes slide-in {
+  from { bottom: 0 }
+    to { bottom: 1rem }
+}
+
+@keyframes slide-in {
+  from { bottom: 0 }
+    to { bottom: 1rem }
+}
+
+@-webkit-keyframes slide-out {
+  from { bottom: 1rem }
+    to { bottom: 0 }
+}
+
+@keyframes slide-out {
+  from { bottom: 1rem }
+    to { bottom: 0 }
+}
+
+@-webkit-keyframes slide-in-nav {
+  from { bottom: -1rem }
+    to { bottom: .5rem }
+}
+
+@keyframes slide-in-nav {
+  from { bottom: -1rem }
+    to { bottom: .5rem }
+}
+
+@-webkit-keyframes slide-out-nav {
+  from { bottom: .5rem }
+    to { bottom: -1rem }
+}
+
+@keyframes slide-out-nav {
+  from { bottom: .5rem }
+    to { bottom: -1rem }
+}
+
+@-webkit-keyframes fade-out {
+  from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes fade-out {
+  from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@-webkit-keyframes fade-in {
+  from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+    to { opacity: 1 }
+}
