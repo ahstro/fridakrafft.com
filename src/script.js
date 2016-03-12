@@ -1,11 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Toggle navbar
+function slideHeaderUp () {
   const main = document.getElementById('main')
-  main.addEventListener('click', _ => {
-    main.className = main.className === 'show-nav' ? 'hide-nav' : 'show-nav'
-  })
+  if (main.className !== 'show-content') {
+    main.className = 'show-content'
+  }
+}
 
-  // Prevent toggling navbar when clicking navbar items
-  const nav = document.getElementById('nav')
-  nav.addEventListener('click', e => { e.stopPropagation() })
+function setContent (id) {
+  if (!id) return
+  slideHeaderUp()
+  document.getElementById('content').innerHTML = document.getElementById(id).innerHTML
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Set state from url hash
+  const id = window.location.hash.substr(1)
+  setContent(id)
+
+  // Set event listener to show content on click
+  document.getElementById('nav').addEventListener('click', e => {
+    if (e.target.tagName.toLowerCase() !== 'a') return
+    setContent(e.target.hash.substr(1))
+  })
 })
