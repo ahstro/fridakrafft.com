@@ -77,8 +77,7 @@ a {
   }
 }
 
-a:hover,
-a:active { color: var(--hoverColor) }
+a:matches(:hover, :active, .active) { color: var(--hoverColor) }
 
 hr {
   border-bottom: none;
