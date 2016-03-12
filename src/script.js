@@ -24,9 +24,35 @@ function updateSite (id) {
   setActiveButton(id)
 }
 
+function closeModal (e) {
+  if (e.target.tagName.toLowerCase() === 'img') return
+  const main = document.getElementById('main')
+  const modal = document.getElementById('modal')
+  main.removeChild(modal)
+}
+
+function openModal (e) {
+  const main = document.getElementById('main')
+  const oldModal = document.getElementById('modal')
+  if (oldModal) main.removeChild(oldModal)
+  const modal = document.createElement('div')
+  const image = document.createElement('img')
+  modal.id = "modal"
+  image.src = e.target.src
+  image.addEventListener('click', _ => window.open(e.target.src, '_blank'))
+  modal.addEventListener('click', closeModal)
+  modal.appendChild(image)
+  main.appendChild(modal)
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Set state from url hash
   updateSite(window.location.hash.substr(1))
+
+  // Add event listeners to images
+  Array.from(document.getElementsByClassName('art')).forEach(el => {
+    el.addEventListener('click', openModal)
+  })
 
   // Set event listener to show content on click
   document.getElementById('nav').addEventListener('click', e => {

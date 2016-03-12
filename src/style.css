@@ -98,6 +98,20 @@ hr {
        width: 40rem;
 }
 
+#modal {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fffc;
+  & img {
+    max-height: 100%;
+        cursor: pointer;
+  }
+}
+
 .about,
 .contact {
   margin: 0 auto;
