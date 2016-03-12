@@ -127,6 +127,11 @@ hr {
   }
 }
 
+.freehugs {
+  text-align: center;
+   font-size: 8rem;
+}
+
 .hidden { display: none }
 .art { cursor: pointer }
 .show-content { animation: slide-to-top 1s forwards }
