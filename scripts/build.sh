@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -n "Doing PostCSS stuff..."
-postcss --use postcss-cssnext --local-plugins -o lib/style.css src/style.css
+postcss --use postcss-cssnext --local-plugins -d lib/ src/*.css
 echo "done"
 
 echo -n "Doing Babel stuff....."
