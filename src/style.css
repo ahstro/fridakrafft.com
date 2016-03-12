@@ -96,29 +96,33 @@ hr {
     overflow: auto;
      padding: 0 1rem;
        width: 40rem;
-  & ul {
-    display: flex;
-    @media (width <= 26rem) {
-      flex-direction: column;
-         align-items: center;
-      & > li { margin-bottom: 1rem }
-    }
-  }
 }
 
-.gallery {
+.contact {
+  margin: 0 auto;
+   width: 20rem;
+}
+
+.grid {
   justify-content: space-between;
         flex-wrap: wrap;
           display: flex;
-  & > .art {
-    max-width: calc(33% - .5rem);
-    @media (width <= 60rem) { max-width: calc(50% - .5rem) }
-    @media (width <= 20rem) { max-width: 100% }
-    &:not(:last-child) { margin-bottom: 1rem; }
-    & > img {
-      max-height: 100%;
-       max-width: 100%;
-    }
+  & > .grid-item:not(:last-child) { margin-bottom: 1rem; }
+}
+
+.contact > .grid-item {
+  width: calc(50% - .5rem);
+  @media (width <= 21rem) { width: 100% }
+  & > a { margin: 0 auto }
+}
+
+.gallery > .grid-item {
+  width: calc(33% - .5rem);
+  @media (width <= 60rem) { width: calc(50% - .5rem) }
+  @media (width <= 20rem) { width: 100% }
+  & > img {
+    max-height: 100%;
+    max-width: 100%;
   }
 }
 
