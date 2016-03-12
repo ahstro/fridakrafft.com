@@ -72,7 +72,7 @@ hr {
 
 .hide-nav {
   & h2 { animation: .5s forwards; animation-name: fade-in, slide-out }
-  & nav { animation: .5s forwards; animation-name: fade-out, slide-out-nav }
+  & nav { animation: .5s forwards; animation-name: fade-out, slide-out-nav; pointer-events: none }
 }
 
 @keyframes slide-in {
