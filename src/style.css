@@ -128,7 +128,7 @@ hr {
 }
 
 .hidden { display: none }
-
+.art { cursor: pointer }
 .show-content { animation: slide-to-top 1s forwards }
 
 @keyframes slide-to-top {
