@@ -45,14 +45,22 @@ function openModal (e) {
   main.appendChild(modal)
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Set state from url hash
-  updateSite(window.location.hash.substr(1))
-
+function addModalEventListeners (e) {
+  // Only update on relevant url
+  if (e && e.newURL.indexOf('#gallery') === -1) return
   // Add event listeners to images
   Array.from(document.getElementsByClassName('art')).forEach(el => {
     el.addEventListener('click', openModal)
   })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Set state from url hash
+  updateSite(window.location.hash.substr(1))
+
+  // Make sure clicking images works
+  window.addEventListener('hashchange',  addModalEventListeners)
+  addModalEventListeners()
 
   // Set event listener to show content on click
   document.getElementById('nav').addEventListener('click', e => {
