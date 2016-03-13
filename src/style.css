@@ -70,11 +70,7 @@ a {
          height: 7rem;
           width: 7rem;
   & img { width: 100% }
-  &:hover {
-    margin: .5rem;
-    height: 6rem;
-     width: 6rem;
-  }
+  &:hover { transform: scale(.9) }
 }
 
 a:matches(:hover, :active, .active) { color: var(--hoverColor) }
