@@ -108,17 +108,9 @@ a {
 
 .link:hover {
 
-  margin: 8px;
+  -webkit-transform: scale(.9);
 
-  margin: .5rem;
-
-  height: 96px;
-
-  height: 6rem;
-
-  width: 96px;
-
-  width: 6rem;
+          transform: scale(.9);
 }
 
 a:hover, a:active, a.active { color: rgb(230, 230, 230) }
