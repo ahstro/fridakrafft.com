@@ -73,7 +73,11 @@ a {
   &:hover { transform: scale(.9) }
 }
 
-a:matches(:hover, :active, .active) { color: var(--hoverColor) }
+a:matches(:hover, :active) { color: var(--hoverColor) }
+a.active {
+  border-bottom: 1px solid var(--mainColor);
+  margin-bottom: .1rem;
+}
 
 hr {
   border-bottom: none;
