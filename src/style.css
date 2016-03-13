@@ -136,8 +136,8 @@ hr {
   @media (width <= 60rem) { width: calc(50% - .5rem) }
   @media (width <= 20rem) { width: 100% }
   & > img {
-    max-height: 100%;
-     max-width: 100%;
+    height: 100%;
+     width: 100%;
   }
 }
 
