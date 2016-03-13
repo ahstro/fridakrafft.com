@@ -146,6 +146,12 @@ hr {
   }
 }
 
+.now { text-align: center }
+.now > img {
+  height: 50%;
+   width: 50%;
+}
+
 .freehugs {
   text-align: center;
    font-size: 8rem;

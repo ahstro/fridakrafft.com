@@ -68,7 +68,7 @@ function openModal (e) {
 
 function addModalEventListeners (id) {
   // Only update on relevant url
-  if (id !== 'gallery') return
+  if (id !== 'gallery' && id !== 'now') return
   // Add event listeners to images
   Array.from(document.getElementsByClassName('art')).forEach(el => {
     el.addEventListener('click', openModal)
