@@ -5,6 +5,13 @@ function slideHeaderUp () {
   }
 }
 
+function slideHeaderDown () {
+  const main = document.getElementById('main')
+  if (main.className === 'show-content') {
+    main.className = 'hide-content'
+  }
+}
+
 function setActiveButton (id) {
   Array.from(document.getElementsByClassName('menu-item')).forEach(x => {
     x.className = x.hash === `#${id}`
@@ -13,10 +20,18 @@ function setActiveButton (id) {
   })
 }
 
+function setHeader (id) {
+  if (id) {
+    slideHeaderUp()
+  } else {
+    slideHeaderDown()
+  }
+}
+
 function setContent (id) {
-  if (!id) return
-  slideHeaderUp()
-  document.getElementById('content').innerHTML = document.getElementById(id).innerHTML
+  document.getElementById('content').innerHTML = id
+    ? document.getElementById(id).innerHTML
+    : ""
 }
 
 function updateSite () {
@@ -24,6 +39,7 @@ function updateSite () {
   const id = window.location.hash.substr(1)
 
   // Set content according to current open page
+  setHeader(id)
   setContent(id)
   setActiveButton(id)
   addModalEventListeners(id)

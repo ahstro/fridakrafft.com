@@ -73,7 +73,8 @@ a {
   &:hover { transform: scale(.9) }
 }
 
-a:matches(:hover, :active) { color: var(--hoverColor) }
+#main:not(.show-content) #title { cursor: default }
+a:matches(:hover, :active):not(#title) { color: var(--hoverColor) }
 a.active {
   border-bottom: 1px solid var(--mainColor);
   margin-bottom: .1rem;
@@ -153,8 +154,14 @@ hr {
 .hidden { display: none }
 .art { cursor: pointer }
 .show-content { animation: slide-to-top 1s forwards }
+.hide-content { animation: slide-to-center 1s forwards }
 
 @keyframes slide-to-top {
   from { margin-top: var(--titleMarginTop) }
     to { margin-top: .2rem }
+}
+
+@keyframes slide-to-center {
+  from { margin-top: .2rem }
+    to { margin-top: var(--titleMarginTop) }
 }
