@@ -113,7 +113,13 @@ a {
           transform: scale(.9);
 }
 
-a:hover, a:active, a.active { color: rgb(230, 230, 230) }
+#main:not(.show-content) #title { cursor: default }
+a:hover:not(#title), a:active:not(#title) { color: rgb(230, 230, 230) }
+a.active {
+  border-bottom: 1px solid #666;
+  margin-bottom: 1.6px;
+  margin-bottom: .1rem;
+}
 
 hr {
   border-bottom: none;
@@ -237,9 +243,15 @@ hr {
 
 .gallery > .grid-item > img {
 
-  max-height: 100%;
+  height: 100%;
 
-  max-width: 100%;
+  width: 100%;
+}
+
+.now { text-align: center }
+.now > img {
+  height: 50%;
+   width: 50%;
 }
 
 .freehugs {
@@ -251,6 +263,7 @@ hr {
 .hidden { display: none }
 .art { cursor: pointer }
 .show-content { -webkit-animation: slide-to-top 1s forwards; animation: slide-to-top 1s forwards }
+.hide-content { -webkit-animation: slide-to-center 1s forwards; animation: slide-to-center 1s forwards }
 
 @-webkit-keyframes slide-to-top {
   from { margin-top: calc(50vh - 4rem) }
@@ -260,4 +273,14 @@ hr {
 @keyframes slide-to-top {
   from { margin-top: calc(50vh - 4rem) }
     to { margin-top: .2rem }
+}
+
+@-webkit-keyframes slide-to-center {
+  from { margin-top: .2rem }
+    to { margin-top: calc(50vh - 4rem) }
+}
+
+@keyframes slide-to-center {
+  from { margin-top: .2rem }
+    to { margin-top: calc(50vh - 4rem) }
 }
