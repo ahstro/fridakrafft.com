@@ -19,9 +19,14 @@ function setContent (id) {
   document.getElementById('content').innerHTML = document.getElementById(id).innerHTML
 }
 
-function updateSite (id) {
+function updateSite () {
+  // Get id from the location hash
+  const id = window.location.hash.substr(1)
+
+  // Set content according to current open page
   setContent(id)
   setActiveButton(id)
+  addModalEventListeners(id)
 }
 
 function closeModal (e) {
@@ -45,9 +50,9 @@ function openModal (e) {
   main.appendChild(modal)
 }
 
-function addModalEventListeners (e) {
+function addModalEventListeners (id) {
   // Only update on relevant url
-  if (e && e.newURL.indexOf('#gallery') === -1) return
+  if (id !== 'gallery') return
   // Add event listeners to images
   Array.from(document.getElementsByClassName('art')).forEach(el => {
     el.addEventListener('click', openModal)
@@ -56,15 +61,8 @@ function addModalEventListeners (e) {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Set state from url hash
-  updateSite(window.location.hash.substr(1))
+  updateSite()
 
-  // Make sure clicking images works
-  window.addEventListener('hashchange',  addModalEventListeners)
-  addModalEventListeners()
-
-  // Set event listener to show content on click
-  document.getElementById('nav').addEventListener('click', e => {
-    if (e.target.tagName.toLowerCase() !== 'a') return
-    updateSite(e.target.hash.substr(1))
-  })
+  // Update site whenever a menu item is clicked
+  window.addEventListener('hashchange',  updateSite)
 })
